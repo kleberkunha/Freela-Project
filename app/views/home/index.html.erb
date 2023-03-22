@@ -1,1 +1,25 @@
-<h1>Hi this is the Home page</h1>
+<div class="container-fluid bg-light top-description-home">
+    <div class="row w-100 d-flex justify-content-center">
+        <div class="col-sm-6 border p-0 colum-desc-control">
+            <div class="home-description">
+                Traduction et post-édition de l'anglais, français, portugais et espagnol vers le français et le portugais
+                Localisation vers les cultures française et brésilienne
+                Revision du français et du portugais
+                Auteur de livres didactiques.
+            </div>
+            <div class="text-member">
+                <h3 class="">Membre de la société française des traducteur</h3>
+                <img src="https://imgs.search.brave.com/mzMnWajvP5agoVFyj0SHdR0eAhJIwybDUxx6GfxLxaE/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9jbGlw/Z3JvdW5kLmNvbS9p/bWFnZXMvY2lyY3Vs/YXItbG9nby1wbmct/MTYucG5n" alt="..." class="rounded-circle">
+            </div>
+        </div>
+    </div>
+</div>
+<%= render partial: 'components/carrousel/carrousel_books', format: :erb %>
+
+<br>
+<br>
+
+<%= render partial: 'components/carrousel/carrousel_partners', format: :erb %>
+
+
+<%= render partial: 'components/footer/footer', format: :erb %>
