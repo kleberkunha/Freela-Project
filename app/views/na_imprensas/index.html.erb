@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Na imprensas</h1>
+
+<div id="na_imprensas">
+  <% @na_imprensas.each do |na_imprensa| %>
+    <%= render na_imprensa %>
+    <p>
+      <%= link_to "Show this na imprensa", na_imprensa %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New na imprensa", new_na_imprensa_path %>

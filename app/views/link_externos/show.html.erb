@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @link_externo %>
+
+<div>
+  <%= link_to "Edit this link externo", edit_link_externo_path(@link_externo) %> |
+  <%= link_to "Back to link externos", link_externos_path %>
+
+  <%= button_to "Destroy this link externo", @link_externo, method: :delete %>
+</div>

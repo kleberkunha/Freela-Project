@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Conversa passadas</h1>
+
+<div id="conversa_passadas">
+  <% @conversa_passadas.each do |conversa_passada| %>
+    <%= render conversa_passada %>
+    <p>
+      <%= link_to "Show this conversa passada", conversa_passada %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New conversa passada", new_conversa_passada_path %>

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @colega_tradutor %>
+
+<div>
+  <%= link_to "Edit this colega tradutor", edit_colega_tradutor_path(@colega_tradutor) %> |
+  <%= link_to "Back to colega tradutors", colega_tradutors_path %>
+
+  <%= button_to "Destroy this colega tradutor", @colega_tradutor, method: :delete %>
+</div>

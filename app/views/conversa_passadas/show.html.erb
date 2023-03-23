@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @conversa_passada %>
+
+<div>
+  <%= link_to "Edit this conversa passada", edit_conversa_passada_path(@conversa_passada) %> |
+  <%= link_to "Back to conversa passadas", conversa_passadas_path %>
+
+  <%= button_to "Destroy this conversa passada", @conversa_passada, method: :delete %>
+</div>

@@ -1,0 +1,2 @@
+class NaImprensa < ApplicationRecord
+end

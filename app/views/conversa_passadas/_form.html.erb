@@ -1,0 +1,32 @@
+<%= form_with(model: conversa_passada) do |form| %>
+  <% if conversa_passada.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(conversa_passada.errors.count, "error") %> prohibited this conversa_passada from being saved:</h2>
+
+      <ul>
+        <% conversa_passada.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :created_by, style: "display: block" %>
+    <%= form.text_field :created_by %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

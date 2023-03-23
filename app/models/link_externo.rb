@@ -1,0 +1,2 @@
+class LinkExterno < ApplicationRecord
+end

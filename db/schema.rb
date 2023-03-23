@@ -10,9 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_22_125903) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_23_135414) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.float "price"
+    t.string "author"
+    t.string "link_page"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "colega_tradutors", force: :cascade do |t|
+    t.string "name"
+    t.string "url_page"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conversa_passadas", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "created_by"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "link_externos", force: :cascade do |t|
+    t.string "title"
+    t.string "url_page"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "models", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,7 +55,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_22_125903) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_models_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_models_on_reset_password_token", unique: true
+    t.index ["reset_password_token"],
+            name: "index_models_on_reset_password_token",
+            unique: true
+  end
+
+  create_table "na_imprensas", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "parceiros", force: :cascade do |t|
+    t.string "name"
+    t.string "url_page"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -34,8 +82,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_22_125903) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "full_name"
+    t.string "phone"
+    t.text "description"
+    t.text "home_main_text"
+    t.integer "conversas_passadas_id"
+    t.integer "na_imprensa_id"
+    t.integer "links_externos_id"
+    t.integer "colegas_tradutores_id"
+    t.integer "parceiros_id"
+    t.integer "books_id"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["reset_password_token"],
+            name: "index_users_on_reset_password_token",
+            unique: true
   end
-
 end

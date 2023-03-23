@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Link externos</h1>
+
+<div id="link_externos">
+  <% @link_externos.each do |link_externo| %>
+    <%= render link_externo %>
+    <p>
+      <%= link_to "Show this link externo", link_externo %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New link externo", new_link_externo_path %>

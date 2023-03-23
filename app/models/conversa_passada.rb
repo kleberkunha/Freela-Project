@@ -1,0 +1,2 @@
+class ConversaPassada < ApplicationRecord
+end

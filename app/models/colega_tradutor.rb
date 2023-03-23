@@ -1,0 +1,2 @@
+class ColegaTradutor < ApplicationRecord
+end

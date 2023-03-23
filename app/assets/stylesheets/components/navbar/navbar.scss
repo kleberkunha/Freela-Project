@@ -9,15 +9,22 @@
 }
 
 .navbar-nav{
-    width: 100%;
-    justify-content: flex-end;
+  width: 100%;
+  justify-content: flex-end;
+  .nav-item{
+    width: 150px;
+    font-weight: bold;
+    text-align: center;
+    margin-right: 50px;
 
-
-    .nav-item{
-        width: 150px;
-        font-weight: bold;
-        text-align: center;
+    .nav-link{
+      background-image: url("https://i.postimg.cc/2SpScbSb/lineimar-bg.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      text-align: center;
+      background-position-y: 5px;
     }
+  }
 }
 
 
