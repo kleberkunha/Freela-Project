@@ -1,42 +1,38 @@
-<%= form_with(model: book) do |form| %>
-  <% if book.errors.any? %>
+<%= form_with(model: @book, class:"form") do |form| %>
+  <% if @book.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+      <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
 
       <ul>
-        <% book.errors.each do |error| %>
+        <% @book.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div>
-    <%= form.label :price, style: "display: block" %>
-    <%= form.text_field :price %>
-  </div>
-
-  <div>
-    <%= form.label :author, style: "display: block" %>
-    <%= form.text_field :author %>
-  </div>
-
-  <div>
-    <%= form.label :link_page, style: "display: block" %>
-    <%= form.text_field :link_page %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="form-controller">
+    <h1>Criar novo Livro</h1>
+    <div class="form-input-material">
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </div>
+    <div class="form-input-material">
+      <%= form.label :author %>
+      <%= form.text_field :author %>
+    </div>
+      <div class="form-input-material">
+      <%= form.label :price %>
+      <%= form.text_field :price %>
+    </div>
+    <div class="form-input-material">
+      <%= form.label :link_page %>
+      <%= form.text_field :link_page %>
+    </div>
+    <div class="form-input-material">
+      <%= form.label :description %>
+      <%= form.text_area :description %>
+    </div>
+    <button type="submit" class="btn btn-primary btn-ghost"><%= form.submit %></button>
   </div>
 <% end %>
+

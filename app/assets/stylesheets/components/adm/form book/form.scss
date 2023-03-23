@@ -1,0 +1,249 @@
+/* Initial form state */
+.form-conversa,
+.form {
+    --col1: #fff;
+    --col2: #252325;
+    --col3: rgba(232, 213, 196, 0.9);
+    --col4: #ffffff;
+    --col5: #683363;
+    --sh: rgba(80, 80, 80, 0.35);
+    --rad: 4px;
+    --radBig: 10px;
+    border-radius: 0 0 var(--radBig) var(--radBig);
+    box-shadow: 0 0 20px var(--sh);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em 1em;
+    padding: 1em;
+    position: relative;
+    max-width: 100%;
+    max-height: 90px;
+    transition: background .3s ease-out, max-height .3s ease-out;
+    overflow: hidden;
+    background-color: #fbdbbb;
+}
+
+.form::before {
+    content: 'Criar novo Livro';
+    color: var(--col2);
+    font-size: 1.2em;
+    font-weight: 700;
+    display: grid;
+    width: calc(100% - 2em);
+    height: 60%;
+    position: absolute;
+    place-items: center;
+    z-index: 99999;
+}
+
+.form-conversa::after,
+.form::after {
+    content: '';
+    backdrop-filter: blur(6px) grayscale(100%);
+    background: linear-gradient(-180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, .5) 70%, rgba(255, 255, 255, 0.3) 90%);
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    display: block;
+    position: absolute;
+    z-index: 999;
+    background-color: #fbdbbb;
+
+}
+
+.form-conversa::after,
+.form-conversa::before,
+.form::after,
+.form::before {
+    border-radius: 0 0 var(--radBig) var(--radBig);
+    pointer-events: none;
+    transition: all .5s ease-out;
+}
+
+/* Form hover and focus */
+.form-conversa:hover,
+.form-conversa:focus-within,
+.form:hover,
+.form:focus-within {
+    max-width: 100%;
+    max-height: 450px;
+}
+
+.form-conversa:focus-within,
+.form:focus-within {
+    overflow: initial;
+}
+
+.form-conversa:hover::before,
+.form-conversa:hover::after,
+.form:hover::before,
+.form:hover::after {
+    opacity: 0;
+}
+
+.form-conversa:hover::after,
+.form:hover::after {
+    backdrop-filter: blur(0) grayscale(0%);
+}
+
+
+.form-conversa label,
+.form label {
+    display: flex;
+    flex-flow: row wrap;
+    color: var(--col4);
+    gap: .5em;
+}
+
+
+.form-conversa fieldset label,
+.form fieldset label {
+    flex: 1;
+    display: flex;
+    flex-flow: row wrap;
+    font-size: .75em;
+}
+
+.sm {
+    justify-content: space-around;
+}
+
+.sm span {
+    text-align: center;
+}
+
+.form-conversa select,
+.form select {
+    box-shadow: inset 3px 3px 1px var(--sh);
+    padding: .75em 1.75em .75em 0.5em;
+    position: relative;
+}
+
+.custom-select {
+    position: relative;
+}
+
+.custom-select::after {
+    position: absolute;
+    content: "";
+    top: 45%;
+    right: 5px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: var(--col5) transparent transparent transparent;
+}
+
+.form-conversa fieldset span,
+.form fieldset span {
+    flex: 1 100%;
+}
+
+.form-conversa fieldset input,
+.form fieldset input {
+    flex: 0 1 40px;
+}
+
+.form-conversa button,
+.form button {
+    background-color: var(--col1);
+    color: var(--col4);
+    border: 2px solid var(--col4);
+    font-size: 1em;
+    font-weight: 700;
+    align-self: center;
+    padding: .5em 1.5em;
+    appearance: none;
+}
+
+/* Form and UI valid and invalid states */
+
+.form-conversa .message,
+.form .message {
+    display: block;
+    opacity: 0;
+    font-size: .75em;
+    font-weight: 400;
+    transition: all .3s ease-out;
+    margin: -1rem 0 0;
+}
+
+.form-conversa:has(:invalid) .message,
+.form:has(:invalid) .message {
+    opacity: 1;
+    margin: .25rem 0 0 0;
+}
+
+label:has(input:invalid),
+label:has(select:invalid) {
+    color: var(--col3);
+    opacity: .8;
+}
+
+label:has(input:valid),
+label:has(select:valid) {
+    opacity: 1;
+}
+
+.form-conversa:hover:has(:focus, :active):valid .submitCard,
+.form:hover:has(:focus, :active):valid .submitCard {
+    max-height: 180px;
+    opacity: 1;
+    transition: opacity 1s ease-out .5s, translate 1.3s ease-out;
+    translate: 0 100%;
+}
+
+.form-conversa:hover:invalid,
+.form:hover:invalid {
+    transition: all .3s ease-out;
+    background-color: var(--col5);
+}
+
+.form-conversa:hover:valid,
+.form:hover:valid {
+    transition: all .3s ease-out;
+    background-color: var(--col1);
+}
+
+.form-conversa:hover:valid *,
+.form:hover:valid * {
+    color: var(--col2);
+}
+
+.form-conversa:hover:invalid fieldset,
+.form:hover:invalid fieldset {
+    border: 1px dashed var(--col3);
+}
+
+.form-conversa:hover:valid fieldset,
+.form:hover:valid fieldset {
+    border: 1px dashed var(--col2);
+}
+
+
+/* MY CODE  */
+
+.form-controller {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+
+/* Buttons top adm page */
+
+.form-conversa::before {
+    content: 'Criar nova conversa';
+    color: var(--col2);
+    font-size: 1.2em;
+    font-weight: 700;
+    display: grid;
+    width: calc(100% - 2em);
+    height: 60%;
+    position: absolute;
+    place-items: center;
+    z-index: 99999;
+}

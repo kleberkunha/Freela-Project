@@ -1,5 +1,5 @@
 class LinkExternosController < ApplicationController
-  before_action :set_link_externo, only: %i[ show edit update destroy ]
+  before_action :set_link_externo, only: %i[show edit update destroy]
 
   # GET /link_externos or /link_externos.json
   def index
@@ -22,14 +22,20 @@ class LinkExternosController < ApplicationController
   # POST /link_externos or /link_externos.json
   def create
     @link_externo = LinkExterno.new(link_externo_params)
+    @link_externo.user_id = current_user.id
 
     respond_to do |format|
       if @link_externo.save
-        format.html { redirect_to link_externo_url(@link_externo), notice: "Link externo was successfully created." }
+        format.html do
+          redirect_to link_externo_url(@link_externo),
+                      notice: "Link externo was successfully created."
+        end
         format.json { render :show, status: :created, location: @link_externo }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @link_externo.errors, status: :unprocessable_entity }
+        format.json do
+          render json: @link_externo.errors, status: :unprocessable_entity
+        end
       end
     end
   end
@@ -38,11 +44,16 @@ class LinkExternosController < ApplicationController
   def update
     respond_to do |format|
       if @link_externo.update(link_externo_params)
-        format.html { redirect_to link_externo_url(@link_externo), notice: "Link externo was successfully updated." }
+        format.html do
+          redirect_to link_externo_url(@link_externo),
+                      notice: "Link externo was successfully updated."
+        end
         format.json { render :show, status: :ok, location: @link_externo }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @link_externo.errors, status: :unprocessable_entity }
+        format.json do
+          render json: @link_externo.errors, status: :unprocessable_entity
+        end
       end
     end
   end
@@ -52,19 +63,23 @@ class LinkExternosController < ApplicationController
     @link_externo.destroy
 
     respond_to do |format|
-      format.html { redirect_to link_externos_url, notice: "Link externo was successfully destroyed." }
+      format.html do
+        redirect_to link_externos_url,
+                    notice: "Link externo was successfully destroyed."
+      end
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_link_externo
-      @link_externo = LinkExterno.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def link_externo_params
-      params.require(:link_externo).permit(:title, :url_page)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_link_externo
+    @link_externo = LinkExterno.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def link_externo_params
+    params.require(:link_externo).permit(:title, :url_page, :user_id)
+  end
 end

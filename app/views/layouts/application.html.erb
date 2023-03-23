@@ -13,7 +13,8 @@
   <body>
     <%= render partial: 'components/navbar/navbar', format: :erb %>
     <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <p class="alert" ><%= alert %></p>
     <%= yield %>
+    <%= render partial: 'components/footer/footer', format: :erb %>
   </body>
 </html>

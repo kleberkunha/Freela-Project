@@ -7,4 +7,10 @@ class User < ApplicationRecord
          :recoverable,
          :rememberable,
          :validatable
+  has_many :books
+  has_many :link_externos
+  has_many :colega_tradutors
+  has_many :conversa_passadas
+  has_many :na_imprensas
+  has_many :parceiros
 end

@@ -9,28 +9,29 @@
         <%= link_to "Accueil", root_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Qui suis-je?</a>
+        <a class="nav-link" href="#">Liens externes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Blog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Achat de livres</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Liens externes</a>
-      </li>
-      <li class="nav-item">
-        <button class="contactButton"> Contact
-          <div class="iconButton">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
-          </div>
-        </button>
-      </li>
+
       <% if !user_signed_in? %>
+
         <li class="">
-          <%= link_to '.', new_user_session_path, class: ""%>
+          <%= link_to '.', new_user_session_path%>
         </li>
       <% else %>
         <li class="nav-item">
-          <button class="contactButton"><%= link_to "Log out", destroy_user_session_path, :method => :delete , class: "nav-link" %></button>
+          <%= link_to "Log out", destroy_user_session_path, :method => :delete , class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'ADM', user_index_path, class:"nav-link" %>
         </li>
       <% end %>
 

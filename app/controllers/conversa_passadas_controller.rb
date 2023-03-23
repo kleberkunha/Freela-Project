@@ -1,5 +1,5 @@
 class ConversaPassadasController < ApplicationController
-  before_action :set_conversa_passada, only: %i[ show edit update destroy ]
+  before_action :set_conversa_passada, only: %i[show edit update destroy]
 
   # GET /conversa_passadas or /conversa_passadas.json
   def index
@@ -22,14 +22,22 @@ class ConversaPassadasController < ApplicationController
   # POST /conversa_passadas or /conversa_passadas.json
   def create
     @conversa_passada = ConversaPassada.new(conversa_passada_params)
+    @conversa_passada.user_id = current_user.id
 
     respond_to do |format|
       if @conversa_passada.save
-        format.html { redirect_to conversa_passada_url(@conversa_passada), notice: "Conversa passada was successfully created." }
-        format.json { render :show, status: :created, location: @conversa_passada }
+        format.html do
+          redirect_to conversa_passada_url(@conversa_passada),
+                      notice: "Conversa passada was successfully created."
+        end
+        format.json do
+          render :show, status: :created, location: @conversa_passada
+        end
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @conversa_passada.errors, status: :unprocessable_entity }
+        format.json do
+          render json: @conversa_passada.errors, status: :unprocessable_entity
+        end
       end
     end
   end
@@ -38,11 +46,16 @@ class ConversaPassadasController < ApplicationController
   def update
     respond_to do |format|
       if @conversa_passada.update(conversa_passada_params)
-        format.html { redirect_to conversa_passada_url(@conversa_passada), notice: "Conversa passada was successfully updated." }
+        format.html do
+          redirect_to conversa_passada_url(@conversa_passada),
+                      notice: "Conversa passada was successfully updated."
+        end
         format.json { render :show, status: :ok, location: @conversa_passada }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @conversa_passada.errors, status: :unprocessable_entity }
+        format.json do
+          render json: @conversa_passada.errors, status: :unprocessable_entity
+        end
       end
     end
   end
@@ -52,19 +65,28 @@ class ConversaPassadasController < ApplicationController
     @conversa_passada.destroy
 
     respond_to do |format|
-      format.html { redirect_to conversa_passadas_url, notice: "Conversa passada was successfully destroyed." }
+      format.html do
+        redirect_to conversa_passadas_url,
+                    notice: "Conversa passada was successfully destroyed."
+      end
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_conversa_passada
-      @conversa_passada = ConversaPassada.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def conversa_passada_params
-      params.require(:conversa_passada).permit(:title, :description, :created_by)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_conversa_passada
+    @conversa_passada = ConversaPassada.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def conversa_passada_params
+    params.require(:conversa_passada).permit(
+      :title,
+      :description,
+      :created_by,
+      :user_id
+    )
+  end
 end

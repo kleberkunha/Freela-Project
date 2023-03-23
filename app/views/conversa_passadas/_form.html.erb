@@ -1,32 +1,35 @@
-<%= form_with(model: conversa_passada) do |form| %>
-  <% if conversa_passada.errors.any? %>
+<%= form_with(model: @conversa_passada, class:"form-conversa") do |form| %>
+  <% if @conversa_passada.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(conversa_passada.errors.count, "error") %> prohibited this conversa_passada from being saved:</h2>
+      <h2><%= pluralize(@conversa_passada.errors.count, "error") %> prohibited this conversa_passada from being saved:</h2>
 
       <ul>
-        <% conversa_passada.errors.each do |error| %>
+        <% @conversa_passada.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
+  <div class="form-controller">
+    <h1>Criar nova conversa</h1>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
+    <div class="form-input-material">
+      <%= form.label :title, style: "display: block" %>
+      <%= form.text_field :title %>
+    </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
+    <div class="form-input-material">
+      <%= form.label :description, style: "display: block" %>
+      <%= form.text_area :description %>
+    </div>
 
-  <div>
-    <%= form.label :created_by, style: "display: block" %>
-    <%= form.text_field :created_by %>
-  </div>
+    <div class="form-input-material">
+      <%= form.label :created_by, style: "display: block" %>
+      <%= form.text_field :created_by %>
+    </div>
 
-  <div>
-    <%= form.submit %>
+    <div class="form-input-material">
+      <%= form.submit %>
+    </div>
   </div>
 <% end %>
