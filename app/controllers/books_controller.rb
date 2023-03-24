@@ -58,7 +58,7 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       format.html do
-        redirect_to books_url, notice: "Book was successfully destroyed."
+        redirect_to user_index_path, notice: "Book was successfully destroyed."
       end
       format.json { head :no_content }
     end

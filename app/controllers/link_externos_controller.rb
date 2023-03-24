@@ -27,7 +27,7 @@ class LinkExternosController < ApplicationController
     respond_to do |format|
       if @link_externo.save
         format.html do
-          redirect_to link_externo_url(@link_externo),
+          redirect_to user_index_path,
                       notice: "Link externo was successfully created."
         end
         format.json { render :show, status: :created, location: @link_externo }
@@ -45,7 +45,7 @@ class LinkExternosController < ApplicationController
     respond_to do |format|
       if @link_externo.update(link_externo_params)
         format.html do
-          redirect_to link_externo_url(@link_externo),
+          redirect_to user_index_path,
                       notice: "Link externo was successfully updated."
         end
         format.json { render :show, status: :ok, location: @link_externo }
@@ -64,7 +64,7 @@ class LinkExternosController < ApplicationController
 
     respond_to do |format|
       format.html do
-        redirect_to link_externos_url,
+        redirect_to user_index_path,
                     notice: "Link externo was successfully destroyed."
       end
       format.json { head :no_content }

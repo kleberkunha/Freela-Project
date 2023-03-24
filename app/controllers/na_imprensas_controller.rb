@@ -27,7 +27,7 @@ class NaImprensasController < ApplicationController
     respond_to do |format|
       if @na_imprensa.save
         format.html do
-          redirect_to na_imprensa_url(@na_imprensa),
+          redirect_to user_index_path,
                       notice: "Na imprensa was successfully created."
         end
         format.json { render :show, status: :created, location: @na_imprensa }
@@ -45,7 +45,7 @@ class NaImprensasController < ApplicationController
     respond_to do |format|
       if @na_imprensa.update(na_imprensa_params)
         format.html do
-          redirect_to na_imprensa_url(@na_imprensa),
+          redirect_to user_index_path,
                       notice: "Na imprensa was successfully updated."
         end
         format.json { render :show, status: :ok, location: @na_imprensa }
@@ -64,7 +64,7 @@ class NaImprensasController < ApplicationController
 
     respond_to do |format|
       format.html do
-        redirect_to na_imprensas_url,
+        redirect_to user_index_path,
                     notice: "Na imprensa was successfully destroyed."
       end
       format.json { head :no_content }

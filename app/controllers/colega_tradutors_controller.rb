@@ -26,7 +26,7 @@ class ColegaTradutorsController < ApplicationController
     respond_to do |format|
       if @colega_tradutor.save
         format.html do
-          redirect_to colega_tradutor_url(@colega_tradutor),
+          redirect_to user_index_path,
                       notice: "Colega tradutor was successfully created."
         end
         format.json do
@@ -46,7 +46,7 @@ class ColegaTradutorsController < ApplicationController
     respond_to do |format|
       if @colega_tradutor.update(colega_tradutor_params)
         format.html do
-          redirect_to colega_tradutor_url(@colega_tradutor),
+          redirect_to user_index_path,
                       notice: "Colega tradutor was successfully updated."
         end
         format.json { render :show, status: :ok, location: @colega_tradutor }
@@ -65,7 +65,7 @@ class ColegaTradutorsController < ApplicationController
 
     respond_to do |format|
       format.html do
-        redirect_to colega_tradutors_url,
+        redirect_to user_index_path,
                     notice: "Colega tradutor was successfully destroyed."
       end
       format.json { head :no_content }

@@ -27,7 +27,7 @@ class ConversaPassadasController < ApplicationController
     respond_to do |format|
       if @conversa_passada.save
         format.html do
-          redirect_to conversa_passada_url(@conversa_passada),
+          redirect_to user_index_path,
                       notice: "Conversa passada was successfully created."
         end
         format.json do
@@ -47,7 +47,7 @@ class ConversaPassadasController < ApplicationController
     respond_to do |format|
       if @conversa_passada.update(conversa_passada_params)
         format.html do
-          redirect_to conversa_passada_url(@conversa_passada),
+          redirect_to user_index_path,
                       notice: "Conversa passada was successfully updated."
         end
         format.json { render :show, status: :ok, location: @conversa_passada }
@@ -66,7 +66,7 @@ class ConversaPassadasController < ApplicationController
 
     respond_to do |format|
       format.html do
-        redirect_to conversa_passadas_url,
+        redirect_to user_index_path,
                     notice: "Conversa passada was successfully destroyed."
       end
       format.json { head :no_content }

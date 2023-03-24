@@ -1,4 +1,6 @@
 /* Initial form state */
+.form-links,
+.form-colegas,
 .form-conversa,
 .form {
     --col1: #fff;
@@ -23,19 +25,10 @@
     background-color: #fbdbbb;
 }
 
-.form::before {
-    content: 'Criar novo Livro';
-    color: var(--col2);
-    font-size: 1.2em;
-    font-weight: 700;
-    display: grid;
-    width: calc(100% - 2em);
-    height: 60%;
-    position: absolute;
-    place-items: center;
-    z-index: 99999;
-}
 
+
+.form-links::after,
+.form-colegas::after,
 .form-conversa::after,
 .form::after {
     content: '';
@@ -52,6 +45,10 @@
 
 }
 
+.form-links::after,
+.form-links::before,
+.form-colegas::after,
+.form-colegas::before
 .form-conversa::after,
 .form-conversa::before,
 .form::after,
@@ -62,19 +59,35 @@
 }
 
 /* Form hover and focus */
+
+.form-links:hover,
+.form-links:focus-within,
+.form-colegas:hover,
+.form-colegas:focus-within,
 .form-conversa:hover,
 .form-conversa:focus-within,
 .form:hover,
 .form:focus-within {
     max-width: 100%;
     max-height: 450px;
+
+
+    .form-controller{
+        z-index: 999999;
+    }
 }
 
+.form-links:focus-within,
+.form-colegas:focus-within,
 .form-conversa:focus-within,
 .form:focus-within {
     overflow: initial;
 }
 
+.form-links:hover::before,
+.form-links:hover::after,
+.form-colegas:hover::before,
+.form-colegas:hover::after,
 .form-conversa:hover::before,
 .form-conversa:hover::after,
 .form:hover::before,
@@ -82,12 +95,15 @@
     opacity: 0;
 }
 
+.form-links:hover::after,
+.form-colegas:hover::after,
 .form-conversa:hover::after,
 .form:hover::after {
     backdrop-filter: blur(0) grayscale(0%);
 }
 
-
+.form-links label,
+.form-colegas label,
 .form-conversa label,
 .form label {
     display: flex;
@@ -96,7 +112,8 @@
     gap: .5em;
 }
 
-
+.form-links fieldset label,
+.form-colegas fieldset label,
 .form-conversa fieldset label,
 .form fieldset label {
     flex: 1;
@@ -113,6 +130,8 @@
     text-align: center;
 }
 
+.form-links select,
+.form-colegas select,
 .form-conversa select,
 .form select {
     box-shadow: inset 3px 3px 1px var(--sh);
@@ -120,31 +139,22 @@
     position: relative;
 }
 
-.custom-select {
-    position: relative;
-}
-
-.custom-select::after {
-    position: absolute;
-    content: "";
-    top: 45%;
-    right: 5px;
-    width: 0;
-    height: 0;
-    border: 6px solid transparent;
-    border-color: var(--col5) transparent transparent transparent;
-}
-
+.form-links fieldset span,
+.form-colegas fieldset span,
 .form-conversa fieldset span,
 .form fieldset span {
     flex: 1 100%;
 }
 
+.form-links fieldset input,
+.form-colegas fieldset input,
 .form-conversa fieldset input,
 .form fieldset input {
     flex: 0 1 40px;
 }
 
+.form-links button,
+.form-colegas button,
 .form-conversa button,
 .form button {
     background-color: var(--col1);
@@ -159,6 +169,8 @@
 
 /* Form and UI valid and invalid states */
 
+.form-links .message,
+.form-colegas .message,
 .form-conversa .message,
 .form .message {
     display: block;
@@ -169,6 +181,8 @@
     margin: -1rem 0 0;
 }
 
+.form-links:has(:invalid) .message,
+.form-colegas:has(:invalid) .message,
 .form-conversa:has(:invalid) .message,
 .form:has(:invalid) .message {
     opacity: 1;
@@ -186,6 +200,8 @@ label:has(select:valid) {
     opacity: 1;
 }
 
+.form-links:hover:has(:focus, :active):valid .submitCard,
+.form-colegas:hover:has(:focus, :active):valid .submitCard,
 .form-conversa:hover:has(:focus, :active):valid .submitCard,
 .form:hover:has(:focus, :active):valid .submitCard {
     max-height: 180px;
@@ -194,28 +210,38 @@ label:has(select:valid) {
     translate: 0 100%;
 }
 
+.form-links:hover:invalid,
+.form-colegas:hover:invalid,
 .form-conversa:hover:invalid,
 .form:hover:invalid {
     transition: all .3s ease-out;
     background-color: var(--col5);
 }
 
+.form-links:hover:valid,
+.form-colegas:hover:valid,
 .form-conversa:hover:valid,
 .form:hover:valid {
     transition: all .3s ease-out;
     background-color: var(--col1);
 }
 
+.form-links:hover:valid *,
+.form-colegas:hover:valid *,
 .form-conversa:hover:valid *,
 .form:hover:valid * {
     color: var(--col2);
 }
 
+.form-links:hover:invalid fieldset,
+.form-colegas:hover:invalid fieldset,
 .form-conversa:hover:invalid fieldset,
 .form:hover:invalid fieldset {
     border: 1px dashed var(--col3);
 }
 
+.form-links:hover:valid fieldset,
+.form-colegas:hover:valid fieldset,
 .form-conversa:hover:valid fieldset,
 .form:hover:valid fieldset {
     border: 1px dashed var(--col2);
@@ -235,8 +261,49 @@ label:has(select:valid) {
 
 /* Buttons top adm page */
 
+.form::before {
+    content: 'Criar novo Livro';
+    color: var(--col2);
+    font-size: 1.2em;
+    font-weight: 700;
+    display: grid;
+    width: calc(100% - 2em);
+    height: 60%;
+    position: absolute;
+    place-items: center;
+    z-index: 99999;
+}
+
 .form-conversa::before {
     content: 'Criar nova conversa';
+    color: var(--col2);
+    font-size: 1.2em;
+    font-weight: 700;
+    display: grid;
+    width: calc(100% - 2em);
+    height: 60%;
+    position: absolute;
+    place-items: center;
+    z-index: 99999;
+}
+
+
+.form-colegas::before{
+    content: 'Criar colega tradutor';
+    color: var(--col2);
+    font-size: 1.2em;
+    font-weight: 700;
+    display: grid;
+    width: calc(100% - 2em);
+    height: 60%;
+    position: absolute;
+    place-items: center;
+    z-index: 99999;
+}
+
+
+.form-links::before{
+    content: 'Criar links externos';
     color: var(--col2);
     font-size: 1.2em;
     font-weight: 700;
