@@ -14,18 +14,20 @@
     <div class="form-input-material">
 
       <div class="field">
-        <%= form.text_field :title, class:"input-field", autocomplete:"off", placeholder:"Titulo" %>
+        <%= form.text_field :title, class:"input-field", autocomplete:"off", placeholder:"Titulo", required: true %>
       </div>
     </div>
 
     <div class="form-input-material">
       <div class="field">
-        <%= form.text_field :url_page, class:"input-field", autocomplete:"off", placeholder:"Link da pagina" %>
+        <%= form.text_field :url_page, class:"input-field", autocomplete:"off", placeholder:"Link da pagina", required: true %>
       </div>
     </div>
 
     <div class="form-input-material">
       <%= form.submit %>
     </div>
+
+
   </div>
 <% end %>
