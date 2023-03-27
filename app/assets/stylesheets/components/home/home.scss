@@ -1,35 +1,67 @@
 .top-description-home{
     background-color: #000000;
-    height: 60vh;
 
     .row{
 
         .colum-desc-control{
-            height: 38.9vh;
             margin: 50px;
+            padding: 10px;
 
             .home-description{
                 background-color: white;
-                height: 17vh;
-                padding: 20px;
+                padding: 17px;
                 text-align: center;
                 font-size: x-large;
                 color: black;
+                font-size: 21px;
             }
 
             .text-member{
                 text-align: center;
                 font-weight: bold;
-                background-color: #fbdbbb;
-                margin-top: 25px;
+                background-color: white;
                 padding: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
 
                 img{
-                    width: 100px;
-                    height: 100px;
+                    width: 55%;
                 }
             }
         }
     }
+
+}
+.agaerre{
+    margin-top: 10vh;
+}
+.section-carousel-books{
+    margin-top: 10vh;
+
+    .my-books{
+        background-image: url("https://i.postimg.cc/2SpScbSb/lineimar-bg.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 12vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+.card-show-jobs:hover,
+.card-show-jobs-review:hover,
+.card-show-edicao:hover{
+    background-color: #fbdbbb48;
+}
+
+
+.separate-partners{
+    margin-top: 10vh;
+}
+.separate-footer{
+    margin-top: 20vh;
 
 }

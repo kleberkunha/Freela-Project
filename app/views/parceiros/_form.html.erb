@@ -1,4 +1,4 @@
-<%= form_with(model: parceiro) do |form| %>
+<%= form_with(model: parceiro, class:"form-parceiros") do |form| %>
   <% if parceiro.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(parceiro.errors.count, "error") %> prohibited this parceiro from being saved:</h2>
@@ -10,18 +10,20 @@
       </ul>
     </div>
   <% end %>
+  <div class="form-controller">
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+    <div class="form-input-material">
+      <%= form.label :name, style: "display: block" %>
+      <%= form.text_field :name %>
+    </div>
 
-  <div>
-    <%= form.label :url_page, style: "display: block" %>
-    <%= form.text_field :url_page %>
-  </div>
+    <div class="form-input-material">
+      <%= form.label :url_page, style: "display: block" %>
+      <%= form.text_field :url_page %>
+    </div>
 
-  <div>
-    <%= form.submit %>
+    <div class="form-input-material">
+      <%= form.submit %>
+    </div>
   </div>
 <% end %>

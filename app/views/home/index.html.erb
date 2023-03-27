@@ -1,22 +1,32 @@
-<div class="container-fluid bg-light top-description-home">
+<%= render partial: 'home/jobs', format: :erb %>
+<div class="container-fluid bg-light top-description-home mt-5">
     <div class="row w-100 d-flex justify-content-center">
         <div class="col-sm-6 border p-0 colum-desc-control">
-            <div class="home-description">
-                Traduction et post-édition de l'anglais, français, portugais et espagnol vers le français et le portugais
-                Localisation vers les cultures française et brésilienne
-                Revision du français et du portugais
-                Auteur de livres didactiques.
-            </div>
             <div class="text-member">
                 <h3 class="">Membre de la société française des traducteur</h3>
-                <img src="https://imgs.search.brave.com/mzMnWajvP5agoVFyj0SHdR0eAhJIwybDUxx6GfxLxaE/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9jbGlw/Z3JvdW5kLmNvbS9p/bWFnZXMvY2lyY3Vs/YXItbG9nby1wbmct/MTYucG5n" alt="..." class="rounded-circle">
+                <div class="col-sm-3">
+                    <a href="https://www.sft.fr/fr/homepage" target="_blank">
+                        <img src="https://imgs.search.brave.com/is0LtQoLC-F35jJOo0betXfHAcASTqwosKYZW7E9wJs/rs:fit:350:305:1/g:ce/aHR0cHM6Ly9hbS10/cmFkdWN0aW9uLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAx/OC8xMS9TRlQtcGFz/dGlsbGUtbWVtYnJl/X0dfc2YucG5n" alt="..." class="rounded-circle">
+                    </a>
+                </div>
+            </div>
+            <div class="home-description">
+                <%= @text_home.home_main_text %>
             </div>
         </div>
     </div>
 </div>
-<%= render partial: 'components/carrousel/carrousel_books', format: :erb %>
+<hr class="agaerre">
+<div class="section-carousel-books">
+    <h1 class="text-center my-books">Meus livros</h1>
+    <%= render partial: 'components/book/book', format: :erb %>
+</div>
 <br>
 <br>
-<%= render partial: 'components/carrousel/carrousel_partners', format: :erb %>
-
-<%= render partial: 'components/footer/footer', format: :erb %>
+<hr>
+<div class="separate-partners">
+    <%= render partial: 'components/carrousel/carrousel_partners', format: :erb %>
+</div>
+<div class="separate-footer">
+    <%= render partial: 'components/footer/footer', format: :erb %>
+</div>

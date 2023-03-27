@@ -27,7 +27,7 @@ class ParceirosController < ApplicationController
     respond_to do |format|
       if @parceiro.save
         format.html do
-          redirect_to parceiro_url(@parceiro),
+          redirect_to user_index_path,
                       notice: "Parceiro was successfully created."
         end
         format.json { render :show, status: :created, location: @parceiro }
@@ -45,7 +45,7 @@ class ParceirosController < ApplicationController
     respond_to do |format|
       if @parceiro.update(parceiro_params)
         format.html do
-          redirect_to parceiro_url(@parceiro),
+          redirect_to user_index_path,
                       notice: "Parceiro was successfully updated."
         end
         format.json { render :show, status: :ok, location: @parceiro }
@@ -64,7 +64,7 @@ class ParceirosController < ApplicationController
 
     respond_to do |format|
       format.html do
-        redirect_to parceiros_url,
+        redirect_to user_index_path,
                     notice: "Parceiro was successfully destroyed."
       end
       format.json { head :no_content }

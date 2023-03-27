@@ -17,3 +17,13 @@
     background-color: #fbdbbbcb;
     font-weight: bold;
 }
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #fbdbbb;
+  }

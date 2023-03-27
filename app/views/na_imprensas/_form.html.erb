@@ -1,4 +1,4 @@
-<%= form_with(model: na_imprensa) do |form| %>
+<%= form_with(model: na_imprensa, class:"form-imprensa") do |form| %>
   <% if na_imprensa.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(na_imprensa.errors.count, "error") %> prohibited this na_imprensa from being saved:</h2>
@@ -10,18 +10,20 @@
       </ul>
     </div>
   <% end %>
+  <div class="form-controller">
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
+    <div class="form-input-material">
+      <%= form.label :title, style: "display: block" %>
+      <%= form.text_field :title %>
+    </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
+    <div class="form-input-material">
+      <%= form.label :description, style: "display: block" %>
+      <%= form.text_area :description %>
+    </div>
 
-  <div>
-    <%= form.submit %>
+    <div class="form-input-material">
+      <%= form.submit %>
+    </div>
   </div>
 <% end %>

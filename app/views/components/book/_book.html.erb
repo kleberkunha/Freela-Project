@@ -1,0 +1,38 @@
+<div class="container-fluid mt-5 mb-3 control-books-position-home">
+  <div class="row card-overflow d-flex justify-content-center">
+    <% @books.each do |book| %>
+      <div class="mobile-layout">
+        <div class="notification-header">
+          <div class="time">
+            €<%= book.price %>
+          </div>
+          <div class="necessities">
+            <i class="fas fa-signal"></i>
+            <i class="fas fa-wifi"></i>
+            <i class="fas fa-battery-full"></i>
+          </div>
+        </div>
+        <div class="book-cover">
+            <img class="book-top" src="https://i.postimg.cc/zBMh2ZJk/Screenshot-from-2023-03-22-18-58-05.png" alt="book-top" />
+          <img class="book-side" src="https://raw.githubusercontent.com/atomic-variable/images-repo/e37f432405904a280858e5437ce1960753bc78a3/book-side.svg" alt="book-side" />
+        </div>
+        <div class="preface">
+          <div class="content">
+            <div class="header">
+              <div class="title"><%= book.title %></div>
+              <div class="icon">
+                <i class="fas fa-chevron-down"></i>
+              </div>
+            </div>
+            <div class="author"><%= book.author %></div>
+            <div class="body">
+              <p>
+                <%= book.description %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

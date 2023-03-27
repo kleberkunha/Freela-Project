@@ -1,0 +1,33 @@
+<%= form_with model: @user, url: user_url(current_user.id), method: :patch, local: true, scope: :user do |f| %>
+    <div class="control-form-edit-user-info">
+      <div class="edit-form-control-1">
+        <div class="container-fluid user-information-edit">
+
+          <div class="row first-edit-row">
+            <div class="  p-0">
+              <%= f.text_field :full_name, placeholder:"First Name" %>
+            </div>
+          </div>
+
+          <div class="row mt-3 second-edit-row">
+            <div>
+              <%= f.text_field :phone, placeholder:"Phone number" %>
+            </div>
+            <div class="">
+              <%= f.text_field :description, placeholder:"descriçao do usuario"%>
+            </div>
+            <div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center description-edit-area">
+        <p>
+          <%= f.text_area :home_main_text, placeholder:"Text da tela inicial" %>
+        </p>
+      </div>
+    </div>
+    <div class="btn-update-user">
+      <%= f.submit 'Update user' %>
+    </div>
+<% end %>

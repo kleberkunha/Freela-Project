@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   resources :colega_tradutors
   resources :parceiros
   resources :books
-  devise_for :users
+  devise_for :user
+  resources :user
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

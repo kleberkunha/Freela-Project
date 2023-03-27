@@ -1,4 +1,6 @@
 /* Initial form state */
+.form-parceiros,
+.form-imprensa,
 .form-links,
 .form-colegas,
 .form-conversa,
@@ -20,13 +22,13 @@
     position: relative;
     max-width: 100%;
     max-height: 90px;
-    transition: background .3s ease-out, max-height .3s ease-out;
     overflow: hidden;
     background-color: #fbdbbb;
+    z-index: 99999;
 }
 
-
-
+.form-parceiros::after,
+.form-imprensa::after,
 .form-links::after,
 .form-colegas::after,
 .form-conversa::after,
@@ -44,7 +46,10 @@
     background-color: #fbdbbb;
 
 }
-
+.form-parceiros::after,
+.form-parceiros::before,
+.form-imprensa::after,
+.form-imprensa::before,
 .form-links::after,
 .form-links::before,
 .form-colegas::after,
@@ -59,7 +64,10 @@
 }
 
 /* Form hover and focus */
-
+.form-parceiros:hover,
+.form-parceiros:focus-within,
+.form-imprensa:hover,
+.form-imprensa:focus-within,
 .form-links:hover,
 .form-links:focus-within,
 .form-colegas:hover,
@@ -70,13 +78,15 @@
 .form:focus-within {
     max-width: 100%;
     max-height: 450px;
-
+    position: absolute;
 
     .form-controller{
         z-index: 999999;
     }
 }
 
+.form-parceiros:focus-within,
+.form-imprensa:focus-within,
 .form-links:focus-within,
 .form-colegas:focus-within,
 .form-conversa:focus-within,
@@ -84,6 +94,10 @@
     overflow: initial;
 }
 
+.form-parceiros:hover::before,
+.form-parceiros:hover::after,
+.form-imprensa:hover::before,
+.form-imprensa:hover::after,
 .form-links:hover::before,
 .form-links:hover::after,
 .form-colegas:hover::before,
@@ -95,13 +109,16 @@
     opacity: 0;
 }
 
+.form-parceiros:hover::after,
+.form-imprensa:hover::after,
 .form-links:hover::after,
 .form-colegas:hover::after,
 .form-conversa:hover::after,
 .form:hover::after {
     backdrop-filter: blur(0) grayscale(0%);
 }
-
+.form-parceiros label,
+.form-imprensa label,
 .form-links label,
 .form-colegas label,
 .form-conversa label,
@@ -112,6 +129,8 @@
     gap: .5em;
 }
 
+.form-parceiros fieldset label,
+.form-imprensa fieldset label,
 .form-links fieldset label,
 .form-colegas fieldset label,
 .form-conversa fieldset label,
@@ -130,6 +149,8 @@
     text-align: center;
 }
 
+.form-parceiros select,
+.form-imprensa select,
 .form-links select,
 .form-colegas select,
 .form-conversa select,
@@ -139,6 +160,8 @@
     position: relative;
 }
 
+.form-parceiros fieldset span,
+.form-imprensa fieldset span,
 .form-links fieldset span,
 .form-colegas fieldset span,
 .form-conversa fieldset span,
@@ -146,6 +169,8 @@
     flex: 1 100%;
 }
 
+.form-parceiros fieldset input,
+.form-imprensa fieldset input,
 .form-links fieldset input,
 .form-colegas fieldset input,
 .form-conversa fieldset input,
@@ -153,6 +178,8 @@
     flex: 0 1 40px;
 }
 
+.form-parceiros button,
+.form-imprensa button,
 .form-links button,
 .form-colegas button,
 .form-conversa button,
@@ -168,7 +195,8 @@
 }
 
 /* Form and UI valid and invalid states */
-
+.form-parceiros .message,
+.form-imprensa .message,
 .form-links .message,
 .form-colegas .message,
 .form-conversa .message,
@@ -181,6 +209,8 @@
     margin: -1rem 0 0;
 }
 
+.form-parceiros:has(:invalid) .message,
+.form-imprensa:has(:invalid) .message,
 .form-links:has(:invalid) .message,
 .form-colegas:has(:invalid) .message,
 .form-conversa:has(:invalid) .message,
@@ -200,6 +230,8 @@ label:has(select:valid) {
     opacity: 1;
 }
 
+.form-parceiros:hover:has(:focus, :active):valid .submitCard,
+.form-imprensa:hover:has(:focus, :active):valid .submitCard,
 .form-links:hover:has(:focus, :active):valid .submitCard,
 .form-colegas:hover:has(:focus, :active):valid .submitCard,
 .form-conversa:hover:has(:focus, :active):valid .submitCard,
@@ -210,6 +242,8 @@ label:has(select:valid) {
     translate: 0 100%;
 }
 
+.form-parceiros:hover:invalid,
+.form-imprensa:hover:invalid,
 .form-links:hover:invalid,
 .form-colegas:hover:invalid,
 .form-conversa:hover:invalid,
@@ -218,6 +252,8 @@ label:has(select:valid) {
     background-color: var(--col5);
 }
 
+.form-parceiros:hover:valid,
+.form-imprensa:hover:valid,
 .form-links:hover:valid,
 .form-colegas:hover:valid,
 .form-conversa:hover:valid,
@@ -226,6 +262,8 @@ label:has(select:valid) {
     background-color: var(--col1);
 }
 
+.form-parceiros:hover:valid *,
+.form-imprensa:hover:valid *,
 .form-links:hover:valid *,
 .form-colegas:hover:valid *,
 .form-conversa:hover:valid *,
@@ -233,6 +271,8 @@ label:has(select:valid) {
     color: var(--col2);
 }
 
+.form-parceiros:hover:invalid fieldset,
+.form-imprensa:hover:invalid fieldset,
 .form-links:hover:invalid fieldset,
 .form-colegas:hover:invalid fieldset,
 .form-conversa:hover:invalid fieldset,
@@ -240,6 +280,8 @@ label:has(select:valid) {
     border: 1px dashed var(--col3);
 }
 
+.form-parceiros:hover:valid fieldset,
+.form-imprensa:hover:valid fieldset,
 .form-links:hover:valid fieldset,
 .form-colegas:hover:valid fieldset,
 .form-conversa:hover:valid fieldset,
@@ -304,6 +346,32 @@ label:has(select:valid) {
 
 .form-links::before{
     content: 'Criar links externos';
+    color: var(--col2);
+    font-size: 1.2em;
+    font-weight: 700;
+    display: grid;
+    width: calc(100% - 2em);
+    height: 60%;
+    position: absolute;
+    place-items: center;
+    z-index: 99999;
+}
+
+.form-imprensa::before{
+    content: 'Criar na imprensa';
+    color: var(--col2);
+    font-size: 1.2em;
+    font-weight: 700;
+    display: grid;
+    width: calc(100% - 2em);
+    height: 60%;
+    position: absolute;
+    place-items: center;
+    z-index: 99999;
+}
+
+.form-parceiros::before{
+    content: 'Criar parceiros';
     color: var(--col2);
     font-size: 1.2em;
     font-weight: 700;

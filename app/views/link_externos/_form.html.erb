@@ -11,23 +11,17 @@
     </div>
   <% end %>
   <div class="form-controller">
+    <h3 class="text-center">Criar link externo</h3>
     <div class="form-input-material">
-
-      <div class="field">
-        <%= form.text_field :title, class:"input-field", autocomplete:"off", placeholder:"Titulo", required: true %>
-      </div>
+      <%= form.label :title %>
+      <%= form.text_field :title, class:"input-field", autocomplete:"off"%>
     </div>
-
     <div class="form-input-material">
-      <div class="field">
-        <%= form.text_field :url_page, class:"input-field", autocomplete:"off", placeholder:"Link da pagina", required: true %>
-      </div>
+      <%= form.label :url_page %>
+      <%= form.text_field :url_page, class:"input-field", autocomplete:"off"%>
     </div>
-
     <div class="form-input-material">
       <%= form.submit %>
     </div>
-
-
   </div>
 <% end %>
