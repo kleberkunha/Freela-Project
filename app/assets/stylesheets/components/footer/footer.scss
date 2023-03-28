@@ -5,16 +5,18 @@
 .footer-image{
     width: 332px;
     height: 110px;
-    background-image: url(https://i.postimg.cc/8CCr3wxy/lineimar.png);
+    background-image: url("https://i.postimg.cc/8CCr3wxy/lineimar.png");
     background-size: contain;
     background-repeat: no-repeat;
 }
 
 .social-control{
     a{
-
+        display: flex;
+        margin: 0px 10px 0px 10px;
         i{
             font-size: 35px;
         }
     }
+
 }

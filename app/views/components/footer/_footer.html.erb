@@ -10,7 +10,7 @@
     <div class="row">
       <div class="col-md-12 py-5">
         <div class="mb-5 d-flex justify-content-center social-control">
-          <a class="fb-ic">
+<!--           <a class="fb-ic">
             <i class="fab fa-facebook-f fa-lg  mr-md-5 "> </i>
           </a>
           <a class="tw-ic">
@@ -18,22 +18,25 @@
           </a>
           <a class="gplus-ic">
             <i class="fab fa-google-plus-g fa-lg mr-md-5 "> </i>
+          </a> -->
+          <a class="li-ic" href="https://www.linkedin.com/in/lineimar/" target="_blank">
+            <i class="fab fa-linkedin-in fa-lg"> </i>
           </a>
-          <a class="li-ic">
-            <i class="fab fa-linkedin-in fa-lg mr-md-5 "> </i>
+          <a class="ins-ic" href="https://www.instagram.com/lineimartranslations/" target="_blank">
+            <i class="fab fa-instagram fa-lg"> </i>
           </a>
-          <a class="ins-ic">
-            <i class="fab fa-instagram fa-lg mr-md-5 "> </i>
-          </a>
-          <a class="pin-ic">
+<!--           <a class="pin-ic">
             <i class="fab fa-pinterest fa-lg fa-2x"> </i>
-          </a>
+          </a> -->
         </div>
       </div>
     </div>
+    <div class="row mb-5">
+      <%= render partial: 'components/carrousel/carrousel_partners', format: :erb %>
+    </div>
   </div>
   <div class="footer-copyright text-center py-3 d-flex justify-content-center">© 2023 Copyright:&nbsp
-    <a href="https://github.com/kleberkunha"> Lineimar Translations</a>
+    <a href="https://www.linkedin.com/in/lineimar/"> Lineimar Translations</a>
     &nbsp
     <p>made by <a href="https://github.com/kleberkunha">Kleber da Cunha</a></p>
   </div>

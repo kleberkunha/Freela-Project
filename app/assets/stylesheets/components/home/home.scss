@@ -1,67 +1,83 @@
-.top-description-home{
-    background-color: #000000;
+.top-description-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    .row{
+  .row {
+    .colum-desc-control {
+      margin: 50px;
+      padding: 10px;
+      border-radius: 20px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -ms-border-radius: 20px;
+      -o-border-radius: 20px;
+      box-shadow: 0px 5px 2px 0px #fbdbbb;
+      background-color: #fbdbbb50;
 
-        .colum-desc-control{
-            margin: 50px;
-            padding: 10px;
-
-            .home-description{
-                background-color: white;
-                padding: 17px;
-                text-align: center;
-                font-size: x-large;
-                color: black;
-                font-size: 21px;
-            }
-
-            .text-member{
-                text-align: center;
-                font-weight: bold;
-                background-color: white;
-                padding: 20px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-
-                img{
-                    width: 55%;
-                }
-            }
-        }
+      .home-description {
+        padding: 17px;
+        text-align: center;
+        font-size: x-large;
+        color: black;
+        font-size: 21px;
+      }
     }
-
+  }
 }
-.agaerre{
-    margin-top: 10vh;
-}
-.section-carousel-books{
-    margin-top: 10vh;
 
-    .my-books{
-        background-image: url("https://i.postimg.cc/2SpScbSb/lineimar-bg.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        height: 12vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+.translation-description-home{
+
+  .row-translation{
+    margin: 0;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    box-shadow: 0px 5px 2px 0px #fbdbbb;
+    background-color: #fbdbbb81;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0px 10px 0px;
+    font-size: 20px;
+    .lang-br{
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+    div{
+      text-align: center;
+    }
+  }
 }
 
+
+
+
+
+
+
+.section-carousel-books {
+  margin-top: 10vh;
+
+  .my-books {
+    background-image: url("https://i.postimg.cc/2SpScbSb/lineimar-bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 
 .card-show-jobs:hover,
 .card-show-jobs-review:hover,
-.card-show-edicao:hover{
-    background-color: #fbdbbb48;
+.card-show-edicao:hover {
+  background-color: #fbdbbb48;
 }
 
-
-.separate-partners{
-    margin-top: 10vh;
-}
-.separate-footer{
-    margin-top: 20vh;
-
+.separate-footer {
+  margin-top: 20vh;
 }
