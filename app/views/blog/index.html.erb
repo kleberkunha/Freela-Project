@@ -1,0 +1,24 @@
+<% @posts.each do |post| %>
+    <section id="about">
+        <!-- Container -->
+        <div class="container">
+            <!-- About wrapper -->
+            <div class="about-wrapper">
+                <div class="after"></div>
+                <div class="content">
+                    <h5 class="title mb-3"><%= post.intro %></h5>
+                    <!-- row -->
+                    <div class="row d-flex">
+                        <div class="col">
+                            <p><%= post.description %></p>
+                        </div>
+                        <div class="col">
+                            <p><%= post.descriptionTwo %></p>
+                        </div>
+                    </div><!-- End of Row -->
+                    <a href="javascript:void(0)">Read More...</a>
+                </div>
+            </div><!-- End of About Wrapper -->
+        </div>  <!-- End of Container-->
+    </section><!--End of Section -->
+<% end %>

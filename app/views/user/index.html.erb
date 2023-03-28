@@ -136,16 +136,18 @@
                                     <%= @books.count %>
                                 </div>
                             </div>
-                            <!-- Card Body -->
-                            <% @books.each do |book| %>
-                                <div class="d-flex">
-                                    <a href="#" class="adm-text-title list-group-item list-group-item-action ">
-                                        <%= book.title %>
-                                    </a>
-                                    <%= link_to 'Delete', book_path(book.id),data: { "turbo-method": :delete },
-                                            method: :delete, class:'button' %>
-                                </div>
-                            <% end %>
+                            <div class="bookOverflow">
+                                <!-- Card Body -->
+                                <% @books.each do |book| %>
+                                    <div class="d-flex">
+                                        <a href="#" class="adm-text-title list-group-item list-group-item-action ">
+                                            <%= book.title %>
+                                        </a>
+                                        <%= link_to 'Delete', book_path(book.id),data: { "turbo-method": :delete },
+                                                method: :delete, class:'button' %>
+                                    </div>
+                                <% end %>
+                            </div>
                         </div>
                     </div>
 
@@ -156,15 +158,17 @@
                                 <h6 class="m-0 font-weight-bold text-primary">Conversas</h6>
                                 <%= @conversa_passadas.count %>
                             </div>
-                            <% @conversa_passadas.each do |conversa| %>
-                                <div class="d-flex">
-                                    <a href="" class="adm-text-title list-group-item-action" target="_blank">
-                                        <%= conversa.title %>
-                                    </a>
-                                    <%= link_to 'Delete', colega_tradutor_path(conversa.id),data: { "turbo-method": :delete },
-                                    method: :delete, class:'button' %>
-                                </div>
-                            <% end %>
+                            <div class="bookOverflow">
+                                <% @conversa_passadas.each do |conversa| %>
+                                    <div class="d-flex">
+                                        <a href="" class="adm-text-title list-group-item-action" target="_blank">
+                                            <%= conversa.title %>
+                                        </a>
+                                        <%= link_to 'Delete', colega_tradutor_path(conversa.id),data: { "turbo-method": :delete },
+                                        method: :delete, class:'button' %>
+                                    </div>
+                                <% end %>
+                            </div>
                         </div>
                     </div>
 
@@ -175,15 +179,17 @@
                                 <h6 class="m-0 font-weight-bold text-primary">Colegas tradutores</h6>
                                 <%= @colega_tradutors.count %>
                             </div>
-                            <% @colega_tradutors.each do |colega| %>
-                                <div class="d-flex">
-                                    <a href="" class="adm-text-title list-group-item list-group-item-action" target="_blank">
-                                        <%= colega.name %>
-                                    </a>
-                                    <%= link_to 'Delete', colega_tradutor_path(colega.id),data: { "turbo-method": :delete },
-                                    method: :delete, class:'button' %>
-                                </div>
-                            <% end %>
+                            <div class="bookOverflow">
+                                <% @colega_tradutors.each do |colega| %>
+                                    <div class="d-flex">
+                                        <a href="" class="adm-text-title list-group-item list-group-item-action" target="_blank">
+                                            <%= colega.name %>
+                                        </a>
+                                        <%= link_to 'Delete', colega_tradutor_path(colega.id),data: { "turbo-method": :delete },
+                                        method: :delete, class:'button' %>
+                                    </div>
+                                <% end %>
+                            </div>
                         </div>
                     </div>
 
@@ -195,16 +201,17 @@
                                 <h6 class="m-0 font-weight-bold text-primary">Links externos</h6>
                                 <%= @link_externos.count %>
                             </div>
-                            <!-- Card Body -->
-                            <% @link_externos.each do |link| %>
-                                <div class="d-flex">
-                                    <a href="<%= link.url_page %>" class="adm-text-title list-group-item list-group-item-action" target="_blank">
-                                        <%= link.title %>
-                                    </a>
-                                    <%= link_to 'Delete', link_externo_path(link.id),data: { "turbo-method": :delete },
-                                        method: :delete, class:'button' %>
-                                </div>
-                            <% end %>
+                            <div class="bookOverflow">
+                                <% @link_externos.each do |link| %>
+                                    <div class="d-flex">
+                                        <a href="<%= link.url_page %>" class="adm-text-title list-group-item list-group-item-action" target="_blank">
+                                            <%= link.title %>
+                                        </a>
+                                        <%= link_to 'Delete', link_externo_path(link.id),data: { "turbo-method": :delete },
+                                            method: :delete, class:'button' %>
+                                    </div>
+                                <% end %>
+                            </div>
                         </div>
                     </div>
 
@@ -214,15 +221,17 @@
                                 <h6 class="m-0 font-weight-bold text-primary">Imprensa</h6>
                                 <%= @na_imprensas.count %>
                             </div>
-                            <% @na_imprensas.each do |imprensa| %>
-                                <div class="d-flex">
-                                    <a href="" class="adm-text-title list-group-item-action" target="_blank">
-                                        <%= imprensa.title %>
-                                    </a>
-                                    <%= link_to 'Delete', na_imprensa_path(imprensa.id),data: { "turbo-method": :delete },
-                                        method: :delete, class:'button' %>
-                                </div>
-                            <% end %>
+                            <div class="bookOverflow">
+                                <% @na_imprensas.each do |imprensa| %>
+                                    <div class="d-flex">
+                                        <a href="" class="adm-text-title list-group-item-action" target="_blank">
+                                            <%= imprensa.title %>
+                                        </a>
+                                        <%= link_to 'Delete', na_imprensa_path(imprensa.id),data: { "turbo-method": :delete },
+                                            method: :delete, class:'button' %>
+                                    </div>
+                                <% end %>
+                            </div>
                         </div>
                     </div>
 
@@ -233,35 +242,25 @@
                                 <%= @parceiros.count %>
 
                             </div>
-                            <% @parceiros.each do |parça| %>
-                                <div class="d-flex">
-                                    <a href="" class="adm-text-title list-group-item list-group-item-action" target="_blank">
-                                        <%= parça.name %>
-                                    </a>
-                                    <%= link_to 'Delete', parceiro_path(parça.id),data: { "turbo-method": :delete },
-                                        method: :delete, class:'button' %>
-                                </div>
-                            <% end %>
+                            <div class="bookOverflow">
+                                <% @parceiros.each do |parça| %>
+                                    <div class="d-flex">
+                                        <a href="" class="adm-text-title list-group-item list-group-item-action" target="_blank">
+                                            <%= parça.name %>
+                                        </a>
+                                        <%= link_to 'Delete', parceiro_path(parça.id),data: { "turbo-method": :delete },
+                                            method: :delete, class:'button' %>
+                                    </div>
+                                <% end %>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- /.container-fluid -->
         </div>
-        <!-- End of Main Content -->
     </div>
-    <!-- End of Content Wrapper -->
 </div>
-
-
-
-
-
-
-
-
-
-
-
+<hr class="cutInPageAdm">
+<%= render "posts/form", post: @post %>
 
 

@@ -1,0 +1,51 @@
+.cutInPageAdm{
+    height: 2vh;
+    background-color: #fbdbbb85;
+}
+
+/* about */
+.about-wrapper {
+  margin-left: 70px;
+  position: relative;
+}
+
+.about-wrapper .content {
+  background-color: #fff;
+  box-shadow: 0 3px 80px rgba(173, 181, 189, 0.3),
+    0 0 10px rgba(173, 181, 189, 0.3) !important;
+  border-radius: 0.2rem;
+  padding: 30px;
+  position: relative;
+}
+
+.about-wrapper .after {
+  position: absolute;
+  top: 10%;
+  left: -60px;
+  background: #fad02c;
+  box-shadow: 0 3px 80px rgba(173, 181, 189, 0.3),
+    0 0 10px rgba(173, 181, 189, 0.3) !important;
+  width: 200px;
+  height: 80%;
+  color: #fff;
+  border-radius: 0.2rem;
+}
+
+.about-wrapper .after h1 {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  position: absolute;
+  top: 43%;
+  left: -36px;
+  font-size: 35px;
+}
+
+@media (max-width: 767.98px) {
+  .about-wrapper {
+    margin-left: 0;
+  }
+  .about-wrapper .after {
+    display: none;
+  }
+}

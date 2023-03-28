@@ -26,9 +26,8 @@
   }
 }
 
-.translation-description-home{
-
-  .row-translation{
+.translation-description-home {
+  .row-translation {
     margin: 0;
     border-radius: 20px;
     -webkit-border-radius: 20px;
@@ -36,27 +35,20 @@
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
     box-shadow: 0px 5px 2px 0px #fbdbbb;
-    background-color: #fbdbbb81;
     display: flex;
     justify-content: space-around;
     padding: 10px 0px 10px 0px;
     font-size: 20px;
-    .lang-br{
+    .lang-br {
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    div{
+    div {
       text-align: center;
     }
   }
 }
-
-
-
-
-
-
 
 .section-carousel-books {
   margin-top: 10vh;
@@ -80,4 +72,28 @@
 
 .separate-footer {
   margin-top: 20vh;
+}
+
+.mini-fr{
+  background-image: url(https://imgs.search.brave.com/uIZd7NNM4Jjb2-lASSf8vbFTJHutaiN8Tuo5-_Sxfm0/rs:fit:640:480:1/g:ce/aHR0cDovL2ltZy5m/cmVlZmxhZ2ljb25z/LmNvbS90aHVtYi9n/bG9zc3lfcm91bmRf/aWNvbi9mcmFuY2Uv/ZnJhbmNlXzY0MC5w/bmc);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+}
+
+.mini-br{
+  background-image: url(https://imgs.search.brave.com/xmwhSxZPcuzo2lMbntLDsmQVDS_CGGohvjxF_WtX7f8/rs:fit:640:480:1/g:ce/aHR0cDovL2ltZy5m/cmVlZmxhZ2ljb25z/LmNvbS90aHVtYi9n/bG9zc3lfcm91bmRf/aWNvbi9icmF6aWwv/YnJhemlsXzY0MC5w/bmc);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+}
+
+.quemSouEu{
+  font-size: 21px;
+  font-style: italic;
+  font-weight: bold;
 }

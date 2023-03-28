@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :posts
+  get "blog/index"
   get "user/index"
   get "adm/admin_page"
   resources :conversa_passadas

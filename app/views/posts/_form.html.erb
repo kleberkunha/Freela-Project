@@ -1,0 +1,59 @@
+<%= form_with(model: post, class:"formCreatePost") do |form| %>
+  <% if post.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="container-fluid d-flex">
+    <div class="about-cardPost">
+      <div class="after"><h1><%= form.text_field :name, class:"postName", placeholder:"Name" %></h1></div>
+      <div class="content-create-post-adm">
+        <!-- row -->
+        <div class="row d-flex">
+          <div class="col-sm-12 d-flex">
+            <div class="col-sm-6">
+              <h5 class="title mb-3"><%= form.text_field :intro %></h5>
+              <p><%= form.text_area :description, class:"text-area-post" %></p>
+            </div>
+            <div class="col-sm-6">
+              <p><%= form.text_area :descriptionTwo, class:"text-area-post2" %></p>
+            </div>
+          </div>
+
+        </div>
+        <div class="row control-btn-post"><%= form.submit %></div><!-- End of Row -->
+      </div>
+    </div>
+    <div class="ml-5 w-50">
+      <div class="card shadow mb-4">
+        <div
+          class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+          <h6 class="m-0 font-weight-bold text-primary">Meus Posts</h6>
+          <div class="dropdown no-arrow">
+              <%= @posts.count %>
+          </div>
+        </div>
+        <div class="postOverflow">
+          <!-- Card Body -->
+          <% @posts.each do |posts| %>
+              <div class="d-flex">
+                  <a href="#" class="adm-text-title list-group-item list-group-item-action ">
+                      <%= posts.name %>
+                  </a>
+                  <%= link_to 'Delete', post_path(posts.id),data: { "turbo-method": :delete },
+                          method: :delete, class:'button' %>
+              </div>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+<% end %>

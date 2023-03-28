@@ -6,3 +6,8 @@
     text-overflow: ellipsis;
     padding: 14px;
 }
+
+.bookOverflow{
+    max-height: 20vh;
+    overflow-y: scroll;
+}

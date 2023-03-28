@@ -18,6 +18,9 @@ class UserController < ApplicationController
     @parceiro = Parceiro.new
     @parceiros = Parceiro.all
 
+    @post = Post.new
+    @posts = Post.all
+
     @user = User.find_by(email: "teste@teste.com")
   end
 

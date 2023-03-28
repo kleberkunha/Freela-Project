@@ -1,0 +1,78 @@
+.cutInPageAdm {
+  height: 2vh;
+  background-color: #fbdbbb85;
+}
+
+.formCreatePost{
+    width: 100%;
+}
+/* about */
+.about-cardPost {
+  margin-left: 70px;
+  position: relative;
+  width: 50%;
+}
+
+.content-create-post-adm {
+  background-color: #fff;
+  box-shadow: 0 3px 80px rgba(173, 181, 189, 0.3),
+    0 0 10px rgba(173, 181, 189, 0.3) !important;
+  border-radius: 0.2rem;
+  padding: 30px;
+  position: relative;
+  width: 100%;
+}
+
+.about-cardPost .after {
+  position: absolute;
+  top: 10%;
+  left: -60px;
+  background: #fad02c;
+  box-shadow: 0 3px 80px rgba(173, 181, 189, 0.3),
+    0 0 10px rgba(173, 181, 189, 0.3) !important;
+  width: 200px;
+  height: 80%;
+  color: #fff;
+  border-radius: 0.2rem;
+}
+
+.postName {
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 38%;
+    left: -3.7vw;
+    font-size: 35px;
+    width: 100%;
+}
+
+@media (max-width: 767.98px) {
+  .about-cardPost {
+    margin-left: 0;
+  }
+  .about-cardPost .after {
+    display: none;
+  }
+}
+
+.content-create-post-adm{
+    .control-btn-post{
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+
+.text-area-post{
+    width: 100%;
+    height: 252px;
+}
+.text-area-post2{
+    width: 100%;
+    height: 252px;
+    margin-top: 44px;
+}
+
+.postOverflow{
+    max-height: 33vh;
+    overflow-y: scroll;
+}
