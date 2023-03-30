@@ -1,11 +1,4 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light control-navbar">
-  <a href="https://www.sft.fr/fr/homepage" target="_blank" class="sft-logo">
-    <img
-      src="https://imgs.search.brave.com/is0LtQoLC-F35jJOo0betXfHAcASTqwosKYZW7E9wJs/rs:fit:350:305:1/g:ce/aHR0cHM6Ly9hbS10/cmFkdWN0aW9uLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAx/OC8xMS9TRlQtcGFz/dGlsbGUtbWVtYnJl/X0dfc2YucG5n"
-      alt="..."
-      class="rounded-circle"
-    />
-  </a>
   <a class="navbar-brand" href="#"></a>
   <button
     class="navbar-toggler"
@@ -50,23 +43,18 @@
         <%= link_to 'Blog', blog_index_path, class:"nav-link"%>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
+        <%= link_to 'Contact', contact_index_path, class:"nav-link"%>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Livros</a>
-      </li>
-
       <% if !user_signed_in? %>
-
-      <li class=""><%= link_to '.', new_user_session_path%></li>
+        <li class=""><%= link_to '.', new_user_session_path%></li>
       <% else %>
-      <li class="nav-item">
-        <%= link_to "Log out", destroy_user_session_path, :method => :delete ,
-        class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'ADM', user_index_path, class:"nav-link" %>
-      </li>
+        <li class="nav-item">
+          <%= link_to "Log out", destroy_user_session_path, :method => :delete ,
+          class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'ADM', user_index_path, class:"nav-link" %>
+        </li>
       <% end %>
     </ul>
   </div>

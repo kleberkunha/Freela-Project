@@ -47,7 +47,12 @@ class UserController < ApplicationController
       :phone,
       :description,
       :home_main_text,
-      :email
+      :email,
+      :member,
+      :service1,
+      :service2,
+      :service3,
+      :service4
     )
   end
 end

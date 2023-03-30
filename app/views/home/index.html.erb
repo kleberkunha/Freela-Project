@@ -7,16 +7,16 @@
     </div>
   </div>
 </div>
-<%= render partial: 'home/animation-lang', format: :erb %>
-<div class="container translation-description-home mt-5">
-  <div class="row w-100 row-translation">
-    <div class="col-sm-4 d-flex">
-      <div class="col-sm-6 p-0 mini-fr"></div>
-      <div class="col-sm-6 p-0 mini-br"></div>
-    </div>
-  </div>
-</div>
+<%= render partial: 'home/services', format: :erb %>
 
-<div class="separate-footer">
-  <%= render partial: 'components/footer/footer', format: :erb %>
-</div>
+
+
+  <div class="container slide-container mt-5">
+    <% @books.each do |book| %>
+      <div class="card-books">
+        <img src="<%= book.link_page %>" alt="Girl in a jacket" width="500" height="600">
+      </div>
+    <% end %>
+  </div>
+
+

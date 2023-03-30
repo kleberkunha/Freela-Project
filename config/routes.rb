@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'contact/index'
   resources :posts
   get "blog/index"
   get "user/index"

@@ -1,0 +1,56 @@
+.services{
+    margin-top: 50px;
+
+    .row{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        .bg-services{
+            background-image: url("https://i.postimg.cc/2SpScbSb/lineimar-bg.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            text-align: center;
+            background-position-y: -16;
+            color: rgba(0, 0, 0, 0.5);
+            font-weight: bold;
+            outline: none;
+            height: 7vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .text-services{
+        padding: 17px;
+        text-align: center;
+        font-size: x-large;
+        color: black;
+        font-size: 21px;
+    }
+
+    .services-line{
+        display: flex;
+        flex-direction: column;
+
+        .member-text{
+            padding: 17px;
+            text-align: center;
+            font-size: x-large;
+            color: black;
+            font-size: 21px;
+            height: 7vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sft-logo {
+            img {
+              width: 60px;
+            }
+        }
+    }
+}
