@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'contact/index'
   resources :posts
   get "blog/index"
   get "user/index"
@@ -12,6 +11,7 @@ Rails.application.routes.draw do
   resources :books
   devise_for :user
   resources :user
+  resources :contacts, only: %i[new create]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
