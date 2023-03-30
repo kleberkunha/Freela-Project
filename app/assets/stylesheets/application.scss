@@ -23,7 +23,15 @@
 }
 ::-webkit-scrollbar-track {
     background: #ffffff;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #fbdbbb;
-  }
+}
+::-webkit-scrollbar-thumb {
+background: #fbdbbb;
+}
+.height-for-login-page{
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+.spaceForFooterConnection{
+    margin-bottom: 15vh;
+}

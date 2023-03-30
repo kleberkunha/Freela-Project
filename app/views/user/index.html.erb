@@ -164,7 +164,7 @@
                                         <a href="" class="adm-text-title list-group-item-action" target="_blank">
                                             <%= conversa.title %>
                                         </a>
-                                        <%= link_to 'Delete', colega_tradutor_path(conversa.id),data: { "turbo-method": :delete },
+                                        <%= link_to 'Delete', conversa_passada_path(conversa.id),data: { "turbo-method": :delete },
                                         method: :delete, class:'button' %>
                                     </div>
                                 <% end %>

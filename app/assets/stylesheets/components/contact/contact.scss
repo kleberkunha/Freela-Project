@@ -1,0 +1,38 @@
+.form-contact{
+
+    .row{
+        display: flex;
+        justify-content: center;
+
+        .form-col{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            label{
+                margin-top: 15px;
+            }
+
+            form{
+                border: 1px solid black;
+                background-color: #fbdbbbc5;
+                div{
+                    text-align: center;
+                    input{
+                        outline: none;
+                        border: none;
+                        padding: 5px;
+
+                    }
+                    .btn{
+                        margin: 10px;
+                    }
+                    textarea{
+                        padding: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+}

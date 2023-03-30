@@ -1,15 +1,18 @@
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="login-box">
-    <div class="user-box">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      <label><%= f.label :email %><br /></label>
+<div class="height-for-login-page">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="login-box">
+      <div class="user-box">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <label><%= f.label :email %><br /></label>
+      </div>
+      <div class="user-box">
+        <%= f.password_field :password, autocomplete: "current-password" %>
+        <label><%= f.label :password %><br /></label>
+      </div><center>
+      <div class="login-button">
+        <%= f.submit "Connect" %>
+      </div>
     </div>
-    <div class="user-box">
-      <%= f.password_field :password, autocomplete: "current-password" %>
-      <label><%= f.label :password %><br /></label>
-    </div><center>
-    <div class="login-button">
-      <%= f.submit "Connect" %>
-    </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
+<div class="spaceForFooterConnection"></div>
