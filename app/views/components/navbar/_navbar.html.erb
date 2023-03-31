@@ -14,7 +14,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <%= link_to "Accueil", root_path, class: "nav-link" %>
+        <%= link_to "HOME", root_path, class: "nav-link" %>
       </li>
       <div class="dropdown nav-item">
         <button
@@ -25,36 +25,34 @@
           aria-haspopup="true"
           aria-expanded="false"
         >
-          Links externos
+          OTHER OPTIONS
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <% if !@link_externos.nil? %>
-            <% @link_externos.each do |link| %>
-              <a class="dropdown-item" href="<%= link.url_page %>" target="_blank"
-                ><%= link.title %></a
-              >
-            <% end %>
-          <% else %>
-            <p>Sem links no momento</p>
+          <% if !@link_externos.nil? %> <% @link_externos.each do |link| %>
+          <a class="dropdown-item" href="<%= link.url_page %>" target="_blank"
+            ><%= link.title %></a
+          >
+          <% end %> <% else %>
+          <p>Sem links no momento</p>
           <% end %>
         </div>
       </div>
       <li class="nav-item">
-        <%= link_to 'Blog', blog_index_path, class:"nav-link"%>
+        <%= link_to 'BLOG', blog_index_path, class:"nav-link"%>
       </li>
       <li class="nav-item">
-        <%= link_to 'Contact', new_contact_url, class:"nav-link"%>
+        <%= link_to 'CONTACT', new_contact_url, class:"nav-link"%>
       </li>
       <% if !user_signed_in? %>
-        <li class=""><%= link_to '.', new_user_session_path%></li>
+      <li class=""><%= link_to '.', new_user_session_path%></li>
       <% else %>
-        <li class="nav-item">
-          <%= link_to "Log out", destroy_user_session_path, :method => :delete ,
-          class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'ADM', user_index_path, class:"nav-link" %>
-        </li>
+      <li class="nav-item">
+        <%= link_to "DISCONNECT", destroy_user_session_path, :method => :delete ,
+        class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'ADM', user_index_path, class:"nav-link" %>
+      </li>
       <% end %>
     </ul>
   </div>

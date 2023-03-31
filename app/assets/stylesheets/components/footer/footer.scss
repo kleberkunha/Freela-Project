@@ -5,9 +5,10 @@
 .footer-image {
   width: 332px;
   height: 110px;
-  background-image: url("https://i.postimg.cc/8CCr3wxy/lineimar.png");
+  background-image: url("https://imgs.search.brave.com/9I8EyRGha6ktqCQRdoOjMxcf7SoALHAAc2rda7etzB8/rs:fit:350:225:1/g:ce/aHR0cHM6Ly9taW5k/Ym9keW1vbXMuY29t/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDE4/LzA2L1lvdXItTG9n/by1oZXJlLnBuZw");
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .social-control {
@@ -18,4 +19,10 @@
       font-size: 35px;
     }
   }
+}
+
+.footer-copyright {
+  position: relative;
+  z-index: 999;
+  margin-top: 10px;
 }

@@ -70,11 +70,19 @@
   background-color: #fbdbbb48;
 }
 
+.card-show-edicao {
+  padding: 0;
+
+  img {
+    width: 43%;
+  }
+}
+
 .separate-footer {
   margin-top: 20vh;
 }
 
-.mini-fr{
+.mini-fr {
   background-image: url(https://imgs.search.brave.com/uIZd7NNM4Jjb2-lASSf8vbFTJHutaiN8Tuo5-_Sxfm0/rs:fit:640:480:1/g:ce/aHR0cDovL2ltZy5m/cmVlZmxhZ2ljb25z/LmNvbS90aHVtYi9n/bG9zc3lfcm91bmRf/aWNvbi9mcmFuY2Uv/ZnJhbmNlXzY0MC5w/bmc);
   background-repeat: no-repeat;
   background-position: center;
@@ -83,7 +91,7 @@
   height: 50px;
 }
 
-.mini-br{
+.mini-br {
   background-image: url(https://imgs.search.brave.com/xmwhSxZPcuzo2lMbntLDsmQVDS_CGGohvjxF_WtX7f8/rs:fit:640:480:1/g:ce/aHR0cDovL2ltZy5m/cmVlZmxhZ2ljb25z/LmNvbS90aHVtYi9n/bG9zc3lfcm91bmRf/aWNvbi9icmF6aWwv/YnJhemlsXzY0MC5w/bmc);
   background-repeat: no-repeat;
   background-position: center;
@@ -92,8 +100,30 @@
   height: 50px;
 }
 
-.quemSouEu{
+.quemSouEu {
   font-size: 21px;
   font-style: italic;
   font-weight: bold;
 }
+
+/* SVG CSS */
+
+.wave-top {
+  position: fixed;
+  margin-top: -14vh;
+  z-index: 99;
+  visibility: hidden;
+}
+
+/* SVG left */
+.bg-svg {
+  margin-top: -12.2vh;
+  margin-left: -7vw;
+}
+/* .bg-svg::before{
+  content: url("https://i.postimg.cc/rsJtK2jZ/svg-bg.png");
+  width: 200px;
+  height: 200px;
+  position: relative;
+  z-index: 999;
+} */

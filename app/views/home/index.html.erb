@@ -2,21 +2,42 @@
 <div class="container-fluid top-description-home mt-5">
   <div class="row w-100 d-flex justify-content-center">
     <div class="col-sm-7 border p-0 colum-desc-control">
-      <p class="ml-3 mt-3 text-center quemSouEu">Quem sou eu?</p>
-      <div class="home-description"><%= @text_home.home_main_text %></div>
+      <p class="ml-3 mt-3 text-center quemSouEu">YOUR TEXT HERE</p>
+      <% if !@text_home.nil?%>
+        <div class="home-description"><%= @text_home.home_main_text %></div>
+      <% else %>
+        <p>YOUR TEXT HERE</p>
+      <% end %>
     </div>
   </div>
 </div>
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 1440 320"
+  ,
+  class="wave-top"
+>
+  <path
+    fill="#00cba9"
+    fill-opacity="1"
+    d="M0,64L120,106.7C240,149,480,235,720,234.7C960,235,1200,149,1320,106.7L1440,64L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
+  ></path>
+</svg>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col bg-svg"></div>
+  </div>
+</div>
+
 <%= render partial: 'home/services', format: :erb %>
 
-
-
-  <div class="container slide-container mt-5">
+<div class="container slide-container">
+  <div class="row">
     <% @books.each do |book| %>
-      <div class="card-books">
-        <img src="<%= book.link_page %>" alt="Girl in a jacket" width="500" height="600">
-      </div>
+    <div class="col card-books">
+      <img src="<%= book.link_page %>" alt="Girl in a jacket" />
+    </div>
     <% end %>
   </div>
-
-
+</div>
