@@ -86,4 +86,5 @@ production:
   <<: *default
   database: complete_blog_production
   username: completeBlog
+  host: heroku
   password: <%= ENV["DB_PASSWORD"] %>
