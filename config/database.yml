@@ -83,7 +83,7 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  database: complete_blog_production
-  username: k
-  password: <%= ENV["DB_PASSWORD"] %>
+<<: *default
+database: complete_blog_production
+username: complete_blog
+password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
