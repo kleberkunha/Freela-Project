@@ -85,5 +85,6 @@ test:
 production:
   <<: *default
   database: complete_blog_production
-  username: DB_USERNAME
+  username: <%= ENV["DB_USERNAME"] %>
   password: <%= ENV["DB_PASSWORD"] %>
+  host: heroku
