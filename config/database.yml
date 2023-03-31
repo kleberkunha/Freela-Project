@@ -85,5 +85,5 @@ test:
 production:
   <<: *default
   database: complete_blog_production
-  username: <%= ENV["DB_USERNAME"] %>
+  username: k
   password: <%= ENV["DB_PASSWORD"] %>
