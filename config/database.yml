@@ -85,4 +85,4 @@ production:
   <<: *default
   database: complete_blog_production
   username: k
-  password: <%= ENV["DB_PASSWORD"] %>
+  password: postgres
